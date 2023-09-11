@@ -60,4 +60,4 @@ jobs:
       with:
         args: >
             -Dsonar.organization=saidinkar
-            -Dsonar.projectKey=saidinkar-sonar
+            -Dsonar.projectKey=saidinkar

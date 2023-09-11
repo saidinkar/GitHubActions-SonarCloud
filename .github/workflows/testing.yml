@@ -50,3 +50,14 @@ jobs:
       run: |
         export PYTHONPATH=src
         pytest
+
+    #Sonar cloud analysis
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@v2.0.1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+            -Dsonar.organization=saidinkar
+            -Dsonar.projectKey=saidinkar-sonar

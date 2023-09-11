@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
             fetch-depth: 0
+
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
@@ -20,4 +21,4 @@ jobs:
           args: >
               -Dsonar.organization=saidinkar
               -Dsonar.projectKey=saidinkarsonar
-              -Dsonar.python.coverage.reportPaths=coverage.xml
+ #             -Dsonar.python.coverage.reportPaths=coverage.xml

@@ -61,3 +61,4 @@ jobs:
         args: >
             -Dsonar.organization=saidinkar
             -Dsonar.projectKey=saidinkar
+            -Dsonar.python.coverage.reportPaths=coverage.xml

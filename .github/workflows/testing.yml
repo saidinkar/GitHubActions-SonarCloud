@@ -12,7 +12,7 @@ jobs:
 
     strategy:
         matrix:
-            python-version: ["3.x"]
+            python-version: ["3.9" , "3.10" ]
 
     steps:
     #Code checkout and python setup
@@ -62,3 +62,4 @@ jobs:
             -Dsonar.organization=saidinkar
             -Dsonar.projectKey=saidinkar
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            

@@ -30,6 +30,7 @@ jobs:
         pip install flake8 pytest
         pip install pytest
         pip install pylint
+        pip install black
 
     # Run flake8 lint tests
     - name: Run flake8 lint tests

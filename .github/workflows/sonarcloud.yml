@@ -4,7 +4,7 @@ on:
 
 jobs:
 
-  DemoSonarCloudSCan:
+  SonarCloudSCan:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,4 +21,4 @@ jobs:
           args: >
               -Dsonar.organization=saidinkar
               -Dsonar.projectKey=saidinkar-sonar
- #             -Dsonar.python.coverage.reportPaths=coverage.xml
+              -Dsonar.python.coverage.reportPaths=coverage.xml

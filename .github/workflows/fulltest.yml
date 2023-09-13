@@ -25,7 +25,7 @@ jobs:
     # Install packages for build
     - name: Install dependencies
       run: |
-        pip install -r ${{ env.SRC_DIRECTORY }}/requirements.txt -U --upgrade-strategy eager
+        pip install -r requirements.txt -U --upgrade-strategy eager
 
     # Run flake8 lint tests
     - name: Run flake8 lint tests

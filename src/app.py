@@ -1,14 +1,11 @@
 '''This is a module-level docstring that describes the purpose of the app.py module.'''
 
-
 from flask import Flask
-
 
 app = Flask(__name__)
 
-
 @app.route("/")
-def index_para():
+def index():
     return "Hello Arch world!"
 
 

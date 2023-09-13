@@ -26,6 +26,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt -U --upgrade-strategy eager
+        pip install setuptools
+        pip install flake8 pytest
+        pip install pytest
+        pip install pylint
 
     # Run flake8 lint tests
     - name: Run flake8 lint tests

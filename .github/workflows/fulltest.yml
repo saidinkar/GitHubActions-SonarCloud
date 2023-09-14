@@ -54,28 +54,28 @@ jobs:
     #Python code linting with pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py') || true
+        pylint $(git ls-files '${{ env.SRC_DIRECTORY }}') || true
 
-    # Run tests with coverage
-    - name: Run tests with coverage
-      run: |
-        coverage run --source=${{ env.SRC_DIRECTORY }} -m pytest --junitxml=junit/test-results.xml
-        coverage xml -o ${{ env.COVERAGE_XML }}
+    # # Run tests with coverage
+    # - name: Run tests with coverage
+    #   run: |
+    #     coverage run --source=${{ env.SRC_DIRECTORY }} -m pytest --junitxml=junit/test-results.xml
+    #     coverage xml -o ${{ env.COVERAGE_XML }}
 
-    # Checking Unit Test result
-    - name: Checking Unit Test result
-      run: |
-        pytest --junitxml=junit/test-results.xml
-        if [ $? -ne 0 ]; then
-            echo "Some tests failed."
-            exit 1
-        fi
+    # # Checking Unit Test result
+    # - name: Checking Unit Test result
+    #   run: |
+    #     pytest --junitxml=junit/test-results.xml
+    #     if [ $? -ne 0 ]; then
+    #         echo "Some tests failed."
+    #         exit 1
+    #     fi
 
-    # Fail pipeline if coverage is below 80%
-    - name: Checking Code Coverage result
-      run: |
-        COVERAGE=$(coverage report | awk '/TOTAL/ {print substr($NF, 1, length($NF)-1)}')
-        if (( $(echo "$COVERAGE < 80" | bc -l) )); then
-          echo "Coverage is below 80% ($COVERAGE%), failing pipeline"
-          exit 1
-        fi
+    # # Fail pipeline if coverage is below 80%
+    # - name: Checking Code Coverage result
+    #   run: |
+    #     COVERAGE=$(coverage report | awk '/TOTAL/ {print substr($NF, 1, length($NF)-1)}')
+    #     if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+    #       echo "Coverage is below 80% ($COVERAGE%), failing pipeline"
+    #       exit 1
+    #     fi

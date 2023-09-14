@@ -1,6 +1,7 @@
 name: Python CI
 
-on: [push, pull_request]
+on: 
+    workflow_dispatch
 
 jobs:
   test_and_check:
@@ -49,6 +50,11 @@ jobs:
     - name: Sort imports using isort
       run: |
         isort .
+
+    #Python code linting with pylint
+    - name: Analysing the code with pylint
+      run: |
+        pylint $(git ls-files '*.py') || true
 
     # Run tests with coverage
     - name: Run tests with coverage

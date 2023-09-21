@@ -54,7 +54,7 @@ jobs:
     #Python code linting with pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py') || true
+        pylint $(git ls-files '${{ env.SRC_DIRECTORY }}') || true
 
     # Run tests with coverage
     - name: Run tests with coverage

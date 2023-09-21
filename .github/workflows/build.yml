@@ -1,0 +1,21 @@
+SonarCloud_Scan:
+    
+    runs-on: ubuntu-latest
+
+    env:
+        PYTHON_VERSION: 3.9
+    #     SCAN_CODE: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'pull_request' || inputs.always-scan == true }}
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: SonarCloud Scan
+        #if: ${{ success() && env.SCAN_CODE == 'true' }}
+        uses: sonarsource/sonarqube-scan-action@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.AIGI_ED_AR_SONAR_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
+      

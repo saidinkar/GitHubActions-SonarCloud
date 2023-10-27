@@ -48,11 +48,11 @@ In the environment field of the workflow we have two variables i.e.
 -   You need to login with your GitHub credentials and you can search for your project in order to check information about it. The project name would be same as the name of the GitHub repository i.e. `aigi-actpy-python-platform`.
 -   Here you can find all the branches (e.g. `main` or `feature/*`) and you can also find the analysis of all the pull requests raised in GitHub.
 -   You need to check that your code meets all the metrics that informs you whether your code meets minimum level of quality required for the project as mentioned below -
-  - Coverage is less than 80.0%
-  - Duplicated Lines is greater than 3.0%
-  -	Maintainability Rating is worse than A
-  -	Reliability Rating is worse than A
-  -	Security Hotspots Reviewed is less than 100%
+     - Coverage is less than 80.0%
+     - Duplicated Lines is greater than 3.0%
+     - Maintainability Rating is worse than A
+     - Reliability Rating is worse than A
+     - Security Hotspots Reviewed is less than 100%
 
 By following these steps, you can ensure that your code adheres to all the coding standards and passes quality checks before merging into main branch.
 

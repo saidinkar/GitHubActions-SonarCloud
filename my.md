@@ -4,7 +4,7 @@
 
 This github actions workflow is designed to ensure code quality and consistency by performing linting, code formatting, pytest and static code analysis. This workflow is triggered automatically when you open a pull request to the main branch.
 In the environment field of the workflow we have two variables i.e. 
-'PYTHON_VERSION' - where you can mention your python version you want to use.
+`PYTHON_VERSION` - where you can mention your python version you want to use.
 'SRC_DIRECTORY' - Here you can mention your source code path.
 
 In this workflow there are multiple step -
